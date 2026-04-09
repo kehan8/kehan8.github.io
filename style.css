@@ -23,6 +23,33 @@
     SKELETON
 -------------------------------------------------------------------*/
 
+#home .heading p {
+    color: #ffffff !important;
+    font-weight: 400 !important;
+}
+
+body, p, .lead {
+    color: #222222 !important;
+    font-weight: 500 !important; 
+}
+
+h3, h4 {
+    color: #111111 !important;
+    font-weight: 700 !important;
+}
+
+.cd-headline {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.footer-company-name{
+    color: #cccccc !important;
+}
+
+.footer-links a {
+    color: #cccccc !important;
+}
+
 body {
     color: #999999;
     font-size: 14px;
@@ -376,6 +403,7 @@ a img.aligncenter {
 	font-weight: 700;
 	font-size: 62px;
 	text-transform: uppercase;
+	text-shadow: 2px 2px 30px rgba(0, 0, 0, 0.6);
 }
 .heading p{
 	font-size: 18px;
@@ -1200,12 +1228,13 @@ xclip
 
 .message-box h2 {
     font-size: 38px;
-    font-weight: 300;
+    font-weight: 500;
     padding: 0 0 10px;
     margin: 0;
     line-height: 62px;
     margin-top: 0;
     text-transform: none;
+	color: #333333
 }
 
 .message-box p {
