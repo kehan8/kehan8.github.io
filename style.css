@@ -23,33 +23,6 @@
     SKELETON
 -------------------------------------------------------------------*/
 
-#home .heading p {
-    color: #ffffff !important;
-    font-weight: 400 !important;
-}
-
-body, p, .lead {
-    color: #222222 !important;
-    font-weight: 500 !important; 
-}
-
-h3, h4 {
-    color: #111111 !important;
-    font-weight: 700 !important;
-}
-
-.cd-headline {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-.footer-company-name{
-    color: #cccccc !important;
-}
-
-.footer-links a {
-    color: #cccccc !important;
-}
-
 body {
     color: #999999;
     font-size: 14px;
@@ -2496,4 +2469,31 @@ select.mobile-device {
 .btn-light:focus {
     border-color: rgba(255, 255, 255, 0.6);
     color: rgba(255, 255, 255, 0.6);
+}
+
+#home .heading p {
+    color: #ffffff !important;
+    font-weight: 400 !important;
+}
+
+body, p, .lead {
+    color: #222222 !important;
+    font-weight: 500 !important; 
+}
+
+h3, h4 {
+    color: #111111 !important;
+    font-weight: 700 !important;
+}
+
+.cd-headline {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.footer-company-name{
+    color: #cccccc !important;
+}
+
+.footer-links a {
+    color: #cccccc !important;
 }
