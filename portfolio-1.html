@@ -17,8 +17,9 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-shrink" id="mainNav" style="background-color:#333333 !important;">
         <div class="container">
             <a class="navbar-brand" href="index.html">Kehan</a>
-            <div>
-                <a href="index.html#portfolio" class="nav-link" style="display:inline; color:#fff;">← Terug naar Portfolio</a>
+            <div style="display:flex; align-items:center; gap:16px;">
+                <a href="index.html#portfolio" class="nav-link" style="display:inline; color:#fff;" data-i18n="back-link">← Back to Portfolio</a>
+                <button id="lang-toggle" class="lang-toggle-btn" onclick="toggleLang()" title="Taal wisselen / Switch language">🇳🇱 NL</button>
             </div>
         </div>
     </nav>
@@ -30,24 +31,24 @@
             <span class="portfolio-detail-tag">Software Developer</span>
             <h1 style="font-size:32px; font-weight:700; margin-bottom:16px;">Project Naam 1</h1>
 
-            <p class="lead" style="color:#555; max-width:720px;">
-                Hier komt een korte introductie van het project. Wat heb je gemaakt, waarom, en voor wie?
+            <p class="lead" style="color:#555; max-width:720px;" data-i18n="p1-intro">
+                Coming soon – a short introduction of this project will be added here.
             </p>
 
             <hr style="margin: 32px 0;">
 
             <div class="row">
                 <div class="col-md-8">
-                    <h3>Over dit project</h3>
-                    <p>Hier kun je meer details schrijven over het project. Wat was de uitdaging? Hoe heb je het opgelost? Welke keuzes heb je gemaakt?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis nibh sed tellus faucibus bibendum.</p>
+                    <h3 data-i18n="about-project">About this project</h3>
+                    <p data-i18n="p1-body1">More details about the project will be written here. What was the challenge? How did you solve it? What choices did you make?</p>
+                    <p data-i18n="placeholder-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis nibh sed tellus faucibus bibendum.</p>
                 </div>
                 <div class="col-md-4">
-                    <h3>Details</h3>
+                    <h3 data-i18n="details-title">Details</h3>
                     <ul style="list-style:none; padding:0; color:#555;">
-                        <li><strong>Type:</strong> Software Developer</li>
-                        <li style="margin-top:8px;"><strong>Technologie:</strong> C#, Unity</li>
-                        <li style="margin-top:8px;"><strong>Jaar:</strong> 2024</li>
+                        <li><strong data-i18n="lbl-type">Type:</strong> Software Developer</li>
+                        <li style="margin-top:8px;"><strong data-i18n="lbl-tech">Technology:</strong> C#, Unity</li>
+                        <li style="margin-top:8px;"><strong data-i18n="lbl-year">Year:</strong> 2024</li>
                         <li style="margin-top:8px;"><strong>GitHub:</strong> <a href="#" style="color:#e84545;">Link</a></li>
                     </ul>
                 </div>
@@ -59,7 +60,7 @@
         <div class="container">
             <div class="footer-distributed">
                 <div class="footer-left">
-                    <p class="footer-company-name">All Rights Reserved. &copy; 2026 Kehan</p>
+                    <p class="footer-company-name" data-i18n="footer-rights">All Rights Reserved. &copy; 2026 Kehan</p>
                 </div>
             </div>
         </div>
@@ -67,5 +68,54 @@
 
     <script src="js/all.js"></script>
     <script src="js/custom.js"></script>
+
+    <!-- Language Switcher -->
+    <script>
+      var translations = {
+        en: {
+          'back-link':         '← Back to Portfolio',
+          'p1-intro':          'Coming soon – a short introduction of this project will be added here.',
+          'about-project':     'About this project',
+          'p1-body1':          'More details about the project will be written here. What was the challenge? How did you solve it? What choices did you make?',
+          'placeholder-lorem': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis nibh sed tellus faucibus bibendum.',
+          'details-title':     'Details',
+          'lbl-type':          'Type:',
+          'lbl-tech':          'Technology:',
+          'lbl-year':          'Year:',
+          'footer-rights':     'All Rights Reserved. \u00A9 2026 Kehan'
+        },
+        nl: {
+          'back-link':         '← Terug naar Portfolio',
+          'p1-intro':          'Binnenkort beschikbaar – hier komt een korte introductie van het project.',
+          'about-project':     'Over dit project',
+          'p1-body1':          'Hier kun je meer details schrijven over het project. Wat was de uitdaging? Hoe heb je het opgelost? Welke keuzes heb je gemaakt?',
+          'placeholder-lorem': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis nibh sed tellus faucibus bibendum.',
+          'details-title':     'Details',
+          'lbl-type':          'Type:',
+          'lbl-tech':          'Technologie:',
+          'lbl-year':          'Jaar:',
+          'footer-rights':     'Alle rechten voorbehouden. \u00A9 2026 Kehan'
+        }
+      };
+      function setLang(lang) {
+        localStorage.setItem('lang', lang);
+        var t = translations[lang];
+        document.querySelectorAll('[data-i18n]').forEach(function(el) {
+          var key = el.getAttribute('data-i18n');
+          if (t[key] !== undefined) el.textContent = t[key];
+        });
+        var btn = document.getElementById('lang-toggle');
+        if (btn) btn.textContent = lang === 'nl' ? '\uD83C\uDDEC\uD83C\uDDE7 EN' : '\uD83C\uDDF3\uD83C\uDDF1 NL';
+        document.documentElement.lang = lang === 'nl' ? 'nl' : 'en';
+      }
+      function toggleLang() {
+        var current = localStorage.getItem('lang') || 'en';
+        setLang(current === 'en' ? 'nl' : 'en');
+      }
+      document.addEventListener('DOMContentLoaded', function() {
+        setLang(localStorage.getItem('lang') || 'en');
+      });
+    </script>
+
 </body>
 </html>

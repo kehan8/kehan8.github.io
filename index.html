@@ -54,7 +54,7 @@
               <a class="nav-link js-scroll-trigger active" href="#home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">About Me</a>
+              <a class="nav-link js-scroll-trigger" href="#about" data-i18n="nav-about">About Me</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
@@ -63,21 +63,21 @@
               <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
             </li>
           </ul>
+          <button id="lang-toggle" class="lang-toggle-btn" onclick="toggleLang()" title="Taal wisselen / Switch language">🇳🇱 NL</button>
         </div>
       </div>
     </nav>
 	
 	<section id="home" class="main-banner parallaxie" style="background: url('uploads/mountain-peak-view-panorama.jpg')">
 		<div class="heading">
-			<h1>Hi, I'm Kehan aka Kevin Davet</h1>
-			<p>Analytical software developer with a focus on logic, system architecture, and creative problem solving.</p>
+			<h1 data-i18n="hero-title">Hi, I'm Kehan aka Kevin Davet</h1>
+			<p data-i18n="hero-subtitle">Analytical Software Engineer | Logic, Systems & Technical Scripting</p>
 			<h3 class="cd-headline clip is-full-width">
-				<span>My expertises are:</span>
+				<span data-i18n="hero-expertise-label">My expertises are:</span>
 				<span class="cd-words-wrapper">
 					<b class="is-visible">Software Engineering</b>
-					<b>Gameplay Programmer / Scripter</b>
-					<b>Hardware & Systems</b>
-					<!--<b>QA Tester</b>-->
+					<b data-i18n="expertise-gameplay">Gameplay Programmer / Scripter</b>
+					<b data-i18n="expertise-hardware">Hardware & Systems</b>
 				</span>
 			</h3>
 		</div>
@@ -113,17 +113,13 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="message-box">                        
-                        <h2>About me</h2>
-                        <p>Analytical Software Developer with a proven Higher Professional Education (HBO)
-							reasoning level and a unique background in both Computer Science (Codam) and
-							precision engineering. I combine a deep low-level understanding of C-systems with a
-							specialization in Technical Scripting (Lua, JSON, mcfunction) for complex game
-							modifications. Through my experience building real-time data systems and high-end
-							computer hardware, I have developed a keen eye for system optimization and
-							Quality Assurance (QA). I am dedicated to solving technical challenges with
-							efficient code and a strong focus on software integrity.
+                        <h2 data-i18n="about-title">About me</h2>
+                        <p data-i18n="about-text">Analytical Software Engineer with a background in Computer Science (Codam) and Precision Engineering. 
+							I combine a deep low-level understanding of C-programming with expert-level Technical Scripting (Lua, JSON, mcfunction) for complex system modifications. 
+							My experience in building real-time data systems and high-end hardware has given me a specialized focus on system optimization and clean, efficient code. 
+							I am dedicated to solving technical challenges with a focus on performance and software integrity.
 						</p>
-                        <a href="uploads/CV Kevin Davet EN.pdf" class="sim-btn btn-hover-new" data-text="Download CV"><span>Download CV</span></a>
+                        <a id="cv-download" href="uploads/CV Kevin Davet EN.pdf" target="_blank" class="sim-btn btn-hover-new" data-text="Download CV"><span data-i18n="download-text">Download CV (EN)</span></a>
                     </div><!-- end messagebox -->
                 </div><!-- end col -->
 
@@ -140,7 +136,7 @@
 		<div class="container">
 			<div class="section-title text-left">
                 <h3>Portfolio</h3>
-                <p>Click on a project for more information.</p>
+                <p data-i18n="portfolio-subtitle">Click on a project for more information.</p>
             </div><!-- end title -->
 
 			<div class="row">
@@ -151,8 +147,8 @@
 						</div>
 						<div class="p-card-body">
 							<span class="p-card-tag">Software Engineering</span>
-							<h4>Projects Codam (42 Network)</h4>
-							<p>Coming soon</p>
+							<h4>Project Codam (42 Network)</h4>
+							<p data-i18n="portfolio-text-1">Coming soon</p>
 						</div>
 					</a>
 				</div>
@@ -163,9 +159,9 @@
 							<img src="uploads/gallery_img-02.jpg" alt="Project 2">
 						</div>
 						<div class="p-card-body">
-							<span class="p-card-tag">Gameplay Programmer</span>
+							<span class="p-card-tag" data-i18n="portfolio-tag-gameplay">Gameplay Programmer</span>
 							<h4>Project Naam 2</h4>
-							<p>Coming soon</p>
+							<p data-i18n="portfolio-text-2">Coming soon</p>
 						</div>
 					</a>
 				</div>
@@ -178,7 +174,7 @@
 						<div class="p-card-body">
 							<span class="p-card-tag">Technical Artist</span>
 							<h4>Project Naam 3</h4>
-							<p>Coming soon</p>
+							<p data-i18n="portfolio-text-3">Coming soon</p>
 						</div>
 					</a>
 				</div>
@@ -190,7 +186,7 @@
         <div class="container">
             <div class="section-title text-center">
                 <h3>Contact</h3>
-                <p>Feel free to contact me via LinkedIn</p>
+                <p data-i18n="contact-subtitle">Feel free to contact me via LinkedIn</p>
             </div><!-- end title -->
 
             <div class="row">
@@ -211,7 +207,7 @@
                         <a href="#about">About</a>
                         <a href="#contact">Contact</a>
                     </p>
-                    <p class="footer-company-name">All Rights Reserved. &copy; 2026 Kehan</p>
+                    <p class="footer-company-name" data-i18n="footer-rights">All Rights Reserved. &copy; 2026 Kehan</p>
                 </div>
             </div>
         </div><!-- end container -->
@@ -229,6 +225,74 @@
 	<!-- ALL PLUGINS -->
     <script src="js/custom.js"></script>
     <script src="js/jquery.vide.js"></script>
+
+    <!-- Language Switcher -->
+    <script>
+      var translations = {
+        en: {
+			'nav-about':             	'About Me',
+			'hero-title':            	"Hi, I'm Kehan aka Kevin Davet",
+			'hero-subtitle':         	'Analytical Software Engineer | Logic, Systems & Technical Scripting',
+			'hero-expertise-label':  	'My expertises are:',
+			'expertise-gameplay':    	'Gameplay Programmer / Scripter',
+			'expertise-hardware':    	'Hardware & Systems',
+			'about-title':           	'About me',
+			'about-text':            	'Analytical Software Engineer with a background in Computer Science (Codam) and Precision Engineering. I combine a deep low-level understanding of C-programming with expert-level Technical Scripting (Lua, JSON, mcfunction) for complex system modifications. My experience in building real-time data systems and high-end hardware has given me a specialized focus on system optimization and clean, efficient code. I am dedicated to solving technical challenges with a focus on performance and software integrity.',
+			"download-text":			'Download CV (EN)',
+			'portfolio-subtitle':    	'Click on a project for more information.',
+			'portfolio-tag-gameplay':	'Gameplay Programmer',
+			'coming-soon':           	'Coming soon',
+			'portfolio-text-1':			'Coming soon',
+			'portfolio-text-2':			'Coming soon',
+			'portfolio-text-3':			'Coming soon',
+			'contact-subtitle':      	'Feel free to contact me via LinkedIn',
+			'footer-rights':         	'All Rights Reserved. \u00A9 2026 Kehan'
+        },
+        nl: {
+			'nav-about':            	'Over Mij',
+			'hero-title':           	'Hoi, ik ben Kehan aka Kevin Davet',
+			'hero-subtitle':        	'Analytisch software-engineer | Logica, systemen en technische scripting',
+			'hero-expertise-label': 	'Mijn expertises zijn:',
+			'expertise-gameplay':   	'Gameplay Programmeur / Scripter',
+			'expertise-hardware':   	'Hardware & Systemen',
+			'about-title':          	'Over mij',
+			'about-text':           	'Analytisch software-engineer met een achtergrond in informatica (Codam) en precisietechniek. Ik combineer een diepgaand begrip van C-programmering met expertise in technische scripting (Lua, JSON, mcfunction) voor complexe systeemwijzigingen. Mijn ervaring met het bouwen van realtime datasystemen en hoogwaardige hardware heeft me een specialistische focus gegeven op systeemoptimalisatie en schone, efficiënte code. Ik zet me in voor het oplossen van technische uitdagingen met een focus op prestaties en software-integriteit.',
+			"download-text":			'Download CV (NL)',
+			'portfolio-subtitle':   	'Klik op een project voor meer informatie.',
+			'portfolio-tag-gameplay':	'Gameplay Programmeur',
+			'coming-soon':          	'Binnenkort beschikbaar',
+			'portfolio-text-1':			'Binnenkort beschikbaar',
+			'portfolio-text-2':			'Binnenkort beschikbaar',
+			'portfolio-text-3':			'Binnenkort beschikbaar',
+        	'contact-subtitle':      	'Neem gerust contact met me op via LinkedIn',
+        	'footer-rights':         	'Alle rechten voorbehouden. \u00A9 2026 Kehan'
+        }
+      };
+
+      function setLang(lang) {
+        localStorage.setItem('lang', lang);
+        var t = translations[lang];
+        document.querySelectorAll('[data-i18n]').forEach(function(el) {
+          var key = el.getAttribute('data-i18n');
+          if (t[key] !== undefined) el.textContent = t[key];
+        });
+        var btn = document.getElementById('lang-toggle');
+        if (btn) btn.textContent = lang === 'nl' ? '\uD83C\uDDEC\uD83C\uDDE7 EN' : '\uD83C\uDDF3\uD83C\uDDF1 NL';
+        var cvLink = document.getElementById('cv-download');
+        if (cvLink) cvLink.href = lang === 'nl' ? 'uploads/CV Kevin Davet NL.pdf' : 'uploads/CV Kevin Davet EN.pdf';
+        document.documentElement.lang = lang === 'nl' ? 'nl' : 'en';
+      }
+
+      function toggleLang() {
+        var current = localStorage.getItem('lang') || 'en';
+        setLang(current === 'en' ? 'nl' : 'en');
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var saved = localStorage.getItem('lang') || 'en';
+        setLang(saved);
+      });
+    </script>
 
 </body>
 </html>
