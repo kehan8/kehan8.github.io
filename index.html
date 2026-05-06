@@ -228,69 +228,65 @@
 
     <!-- Language Switcher -->
     <script>
-      var translations = {
-        en: {
-			'nav-about':             	'About Me',
-			'hero-title':            	"Hi, I'm Kehan aka Kevin Davet",
-			'hero-subtitle':         	'Analytical Software Engineer | Logic, Systems & Technical Scripting',
-			'hero-expertise-label':  	'My expertises are:',
-			'expertise-gameplay':    	'Gameplay Programmer / Scripter',
-			'expertise-hardware':    	'Hardware & Systems',
-			'about-title':           	'About me',
-			'about-text':            	'Analytical Software Engineer with a background in Computer Science (Codam) and Precision Engineering. I combine a deep low-level understanding of C-programming with expert-level Technical Scripting (Lua, JSON, mcfunction) for complex system modifications. My experience in building real-time data systems and high-end hardware has given me a specialized focus on system optimization and clean, efficient code. I am dedicated to solving technical challenges with a focus on performance and software integrity.',
-			"download-text":			'Download CV (EN)',
-			'portfolio-subtitle':    	'Click on a project for more information.',
-			'portfolio-tag-gameplay':	'Gameplay Programmer',
-			'coming-soon':           	'Coming soon',
-			'portfolio-text-1':			'Deep-level C programming, memory management, and custom algorithms built from scratch',
-			'portfolio-text-2':			'Coming soon',
-			'portfolio-text-3':			'Coming soon',
-			'contact-subtitle':      	'Feel free to contact me via LinkedIn',
-        },
-        nl: {
-			'nav-about':            	'Over Mij',
-			'hero-title':           	'Hoi, ik ben Kehan aka Kevin Davet',
-			'hero-subtitle':        	'Analytisch Software-Engineer | Logica, Systemen & Technische Scripting',
-			'hero-expertise-label': 	'Mijn expertises zijn:',
-			'expertise-gameplay':   	'Gameplay Programmeur / Scripter',
-			'expertise-hardware':   	'Hardware & Systemen',
-			'about-title':          	'Over mij',
-			'about-text':           	'Analytisch Software-Engineer met een achtergrond in Informatica (Codam) en Precisietechniek. Ik combineer een diepgaand begrip van C-programmering met expertise in Technische Scripting (Lua, JSON, mcfunction) voor complexe systeemwijzigingen. Mijn ervaring met het bouwen van realtime datasystemen en hoogwaardige hardware heeft me een specialistische focus gegeven op systeemoptimalisatie en schone, efficiënte code. Ik zet me in voor het oplossen van technische uitdagingen met een focus op prestaties en software-integriteit.',
-			"download-text":			'Download CV (NL)',
-			'portfolio-subtitle':   	'Klik op een project voor meer informatie.',
-			'portfolio-tag-gameplay':	'Gameplay Programmeur',
-			'coming-soon':          	'Binnenkort beschikbaar',
-			'portfolio-text-1':			'Geavanceerde C-programmering, geheugenbeheer en op maat gemaakte algoritmen',
-			'portfolio-text-2':			'Binnenkort beschikbaar',
-			'portfolio-text-3':			'Binnenkort beschikbaar',
-        	'contact-subtitle':      	'Neem gerust contact met me op via LinkedIn',
-        }
-      };
-
-      function setLang(lang) {
-        localStorage.setItem('lang', lang);
-        var t = translations[lang];
-        document.querySelectorAll('[data-i18n]').forEach(function(el) {
-          var key = el.getAttribute('data-i18n');
-          if (t[key] !== undefined) el.textContent = t[key];
-        });
-        var btn = document.getElementById('lang-toggle');
-        if (btn) btn.textContent = lang === 'nl' ? '\uD83C\uDDEC\uD83C\uDDE7 EN' : '\uD83C\uDDF3\uD83C\uDDF1 NL';
-        var cvLink = document.getElementById('cv-download');
-        if (cvLink) cvLink.href = lang === 'nl' ? 'uploads/CV Kevin Davet NL.pdf' : 'uploads/CV Kevin Davet EN.pdf';
-        document.documentElement.lang = lang === 'nl' ? 'nl' : 'en';
-      }
-
-      function toggleLang() {
-        var current = localStorage.getItem('lang') || 'en';
-        setLang(current === 'en' ? 'nl' : 'en');
-      }
-
-      document.addEventListener('DOMContentLoaded', function() {
-        var saved = localStorage.getItem('lang') || 'en';
-        setLang(saved);
-      });
+		var translations = {
+			en: {
+				'nav-about':				'About Me',
+				'hero-title':				"Hi, I'm Kehan aka Kevin Davet",
+				'hero-subtitle':			'Analytical Software Engineer | Logic, Systems & Technical Scripting',
+				'hero-expertise-label':		'My expertises are:',
+				'expertise-gameplay':		'Gameplay Programmer / Scripter',
+				'expertise-hardware':		'Hardware & Systems',
+				'about-title':				'About me',
+				'about-text':				'Analytical Software Engineer with a background in Computer Science (Codam) and Precision Engineering. I combine a deep low-level understanding of C-programming with expert-level Technical Scripting (Lua, JSON, mcfunction) for complex system modifications. My experience in building real-time data systems and high-end hardware has given me a specialized focus on system optimization and clean, efficient code. I am dedicated to solving technical challenges with a focus on performance and software integrity.',
+				"download-text":			'Download CV (EN)',
+				'portfolio-subtitle':		'Click on a project for more information.',
+				'portfolio-tag-gameplay':	'Gameplay Programmer',
+				'coming-soon':				'Coming soon',
+				'portfolio-text-1':			'Deep-level C programming, memory management, and custom algorithms built from scratch',
+				'portfolio-text-2':			'Coming soon',
+				'portfolio-text-3':			'Coming soon',
+				'contact-subtitle':			'Feel free to contact me via LinkedIn',
+			},
+			nl: {
+				'nav-about':				'Over Mij',
+				'hero-title':				'Hoi, ik ben Kehan aka Kevin Davet',
+				'hero-subtitle':			'Analytisch Software-Engineer | Logica, Systemen & Technische Scripting',
+				'hero-expertise-label':		'Mijn expertises zijn:',
+				'expertise-gameplay':		'Gameplay Programmeur / Scripter',
+				'expertise-hardware':		'Hardware & Systemen',
+				'about-title':				'Over mij',
+				'about-text':				'Analytisch Software-Engineer met een achtergrond in Informatica (Codam) en Precisietechniek. Ik combineer een diepgaand begrip van C-programmering met expertise in Technische Scripting (Lua, JSON, mcfunction) voor complexe systeemwijzigingen. Mijn ervaring met het bouwen van realtime datasystemen en hoogwaardige hardware heeft me een specialistische focus gegeven op systeemoptimalisatie en schone, efficiënte code. Ik zet me in voor het oplossen van technische uitdagingen met een focus op prestaties en software-integriteit.',
+				"download-text":			'Download CV (NL)',
+				'portfolio-subtitle':		'Klik op een project voor meer informatie.',
+				'portfolio-tag-gameplay':	'Gameplay Programmeur',
+				'coming-soon':				'Binnenkort beschikbaar',
+				'portfolio-text-1':			'Geavanceerde C-programmering, geheugenbeheer en op maat gemaakte algoritmen',
+				'portfolio-text-2':			'Binnenkort beschikbaar',
+				'portfolio-text-3':			'Binnenkort beschikbaar',
+				'contact-subtitle':			'Neem gerust contact met me op via LinkedIn',
+			}
+		};
+		function setLang(lang) {
+			localStorage.setItem('lang', lang);
+			var t = translations[lang];
+			document.querySelectorAll('[data-i18n]').forEach(function(el) {
+				var key = el.getAttribute('data-i18n');
+				if (t[key] !== undefined) el.textContent = t[key];
+			});
+			var btn = document.getElementById('lang-toggle');
+			if (btn) btn.textContent = lang === 'nl' ? '\uD83C\uDDEC\uD83C\uDDE7 EN' : '\uD83C\uDDF3\uD83C\uDDF1 NL';
+			var cvLink = document.getElementById('cv-download');
+			if (cvLink) cvLink.href = lang === 'nl' ? 'uploads/CV Kevin Davet NL.pdf' : 'uploads/CV Kevin Davet EN.pdf';
+			document.documentElement.lang = lang === 'nl' ? 'nl' : 'en';
+		}
+		function toggleLang() {
+			var current = localStorage.getItem('lang') || 'en';
+			setLang(current === 'en' ? 'nl' : 'en');
+		}
+		document.addEventListener('DOMContentLoaded', function() {
+			var saved = localStorage.getItem('lang') || 'en';
+			setLang(saved);
+		});
     </script>
-
 </body>
 </html>
